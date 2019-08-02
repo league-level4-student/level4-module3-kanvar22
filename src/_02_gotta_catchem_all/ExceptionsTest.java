@@ -49,7 +49,14 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		try {
+			em.reverseString("");
+			fail("life");
+		}
+		catch(IllegalStateException e){
+			em.reverseString("hi");
+			assertEquals("ih", em.reverseString("hi"));
+		}
 	}
 	
 	
